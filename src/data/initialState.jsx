@@ -1,4 +1,4 @@
-const initialState = [
+export const initialState = [
   {
     "id": 1,
     "item": "Make a doctor appointment",
