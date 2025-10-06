@@ -34,7 +34,7 @@ This table tracks the implementation status of all features outlined in the proj
 | **3.i** | **Bind the value** of the edit input to state. | [ ] | Ensures accuracy when first displayed. |
 | **3.ii** | Hide "delete" and "edit" buttons when input is active; show a **"Save"** button. | [ ] | Conditional rendering based on editing state. |
 | **3.iii** | The **"Save"** button saves changes to the todo list state. | [ ] | Logic to update the todo's text property. |
-| **4.** | **Input element** to create and add new todos to the list. | [ ] | |
+| **4.** | **Input element** to create and add new todos to the list. | [x] | |
 | **5.** | New todos are added to the **TOP** of the list (newest first). | [ ] | Use spread operator to prepend the new item. |
 
 Change - [ ] to - [x] when you finish a task.
@@ -44,5 +44,5 @@ Update the Checked count (e.g., 5 / 14 tasks).
 Update the Progress Bar:
 Each ░ = 10% progress
 Replace with █ as you advance
-Example: If you finish tasks worth 30% → [█░░░░░░░░░░] (30%)
+Example: If you finish tasks worth 30% → [██░░░░░░░░░] (30%)
 
