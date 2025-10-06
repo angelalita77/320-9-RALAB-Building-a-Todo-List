@@ -1,5 +1,5 @@
 export default function Header(){
     return(
-        <h1>Todo List</h1>
+        <h1 style={{color: "#faf0ca"}}>Todo List</h1>
     )
 }

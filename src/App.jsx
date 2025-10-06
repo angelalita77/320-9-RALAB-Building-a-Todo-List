@@ -15,9 +15,6 @@ function handleItemChange(){
   return (
     <div>
       <Header />
-      <label>
-      
-      </label>
     </div>
   )
 }
