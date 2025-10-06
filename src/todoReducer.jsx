@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 
-export default function reducer(state, action) {
+export default function todoReducer(state, action) {
 
     switch(action.type) {
 
