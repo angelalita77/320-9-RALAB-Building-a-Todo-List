@@ -8,7 +8,7 @@ export default function todoReducer(state, action) {
         case "ADD_TODO":{
             return[
                 ...state,
-                {id: newID, item: action.payload, completed: false};
+                {id: newID, item: action.payload, completed: false}
             ];
         }
         
