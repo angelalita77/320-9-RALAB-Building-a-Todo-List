@@ -1,14 +1,19 @@
 import { useReducer } from "react";
 
+const TODOS_ACTIONS = {
+    ADD_TASK: 'add_task',
+    DELETE_TASK: 'delete_task'
+}
+
 export default function todoReducer(state, action) {
 
     switch(action.type) {
 
         /* add a new  item  */
-        case "ADD_TODO":{
+        case TODOS_ACTIONS.ADD_TASK:{
             return[
                 ...state,
-                {id: newID, item: action.payload, completed: false}
+                {id: state.length+1, task: action.payload, completed: false}
             ];
         }
         
