@@ -1,7 +1,7 @@
 export const initialState = [
   {
     "id": 1,
-    "task": "Make a doctor appointment",
+    "task": "Practice bass playing",
     "completed": false
   },
   {
@@ -12,6 +12,16 @@ export const initialState = [
   {
     "id": 3,
     "task": "Pick up new glasses",
+    "completed": false
+  },
+  {
+    "id": 4,
+    "task": "Write Japanese journal",
+    "completed": false
+  },
+  {
+    "id": 5,
+    "task": "Do one LeetCode problem",
     "completed": false
   }
 ];
