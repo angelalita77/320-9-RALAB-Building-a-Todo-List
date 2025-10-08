@@ -10,12 +10,20 @@ Effectively decide where pieces of state should live.
 Use conditional rendering and conditional styling to provide a positive, interactive user experience.
 Create a complete React application from a set of desired functionality.
 
+### About The Software
+This is a Todo List web app. The user should be able to do the following:
+- Enter a new task to the todo field
+- Add new tasks by clicking on the [Add] button
+- Check off task that are completed
+- The option to delete checked off task <br>
+- ```Edit the listed task and save edit changes (WIP)```
+<br><br><br>
 
 
 Project Progress Tracker
 Progress: 85% complete
-Checked: 12 / 14 tasks
-Progress Bar: [░░░░░] (85%)
+Checked: 5 / 11 tasks
+Progress Bar: [███████░░░░] 
 
 Completed	Requirement	Weight
 
@@ -26,16 +34,16 @@ This table tracks the implementation status of all features outlined in the proj
 | Requirement No. | Feature Description | Implementation Status | Notes |
 | :---: | :--- | :---: | :--- |
 | **1.** | Heading labeling the list as "Todo List". | [x] | |
-| **2.** | List of todo items, each with text, checkbox, and delete/edit buttons. | [ ] | Base component structure established. |
-| **2.A.** | **Checkbox** indicating completion status. | [ ] | Logic to toggle the `isComplete` state. |
-| **2.B.** | **Delete** button next to each item. | [ ] | |
-| **2.B.i** | **DELETE button is DISABLED** unless the todo is complete. | [ ] | Conditional rendering logic is required. |
+| **2.** | List of todo items, each with text, checkbox, and delete/edit buttons. | [x] | Base component structure established. |
+| **2.A.** | **Checkbox** indicating completion status. | [x] | Logic to toggle the `isComplete` state. |
+| **2.B.** | **Delete** button next to each item. | [x] | |
+| **2.B.i** | **DELETE button is DISABLED** unless the todo is complete. | [x] | Conditional rendering logic is required. |
 | **3.** | **Edit** button that replaces the todo text with an **input field**. | [ ] | Requires a state variable to track the item being edited. |
 | **3.i** | **Bind the value** of the edit input to state. | [ ] | Ensures accuracy when first displayed. |
 | **3.ii** | Hide "delete" and "edit" buttons when input is active; show a **"Save"** button. | [ ] | Conditional rendering based on editing state. |
 | **3.iii** | The **"Save"** button saves changes to the todo list state. | [ ] | Logic to update the todo's text property. |
 | **4.** | **Input element** to create and add new todos to the list. | [x] | |
-| **5.** | New todos are added to the **TOP** of the list (newest first). | [ ] | Use spread operator to prepend the new item. |
+| **5.** | New todos are added to the **TOP** of the list (newest first). | [x] | Use spread operator to prepend the new item. |
 
 Change - [ ] to - [x] when you finish a task.
 Add up the weights of the checked items.
@@ -44,5 +52,7 @@ Update the Checked count (e.g., 5 / 14 tasks).
 Update the Progress Bar:
 Each ░ = 10% progress
 Replace with █ as you advance
-Example: If you finish tasks worth 30% → [██░░░░░░░░░] (30%)
+EXAMPLE: If you finish tasks worth 30% → [███░░░░░░░░░]
+
+
 
