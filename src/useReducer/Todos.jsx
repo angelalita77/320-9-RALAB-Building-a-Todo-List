@@ -22,8 +22,8 @@ function reducer(state, action) {
 
         case TODOS_ACTIONS.ADD_TASK: return [
             {
-                id: crypto.randomUUID(),
-                task: action.payload,
+                id: crypto.randomUUID(), //unique id assigned to new tasks
+                task: action.payload, 
                 completed: false
             },
             ...state, 
@@ -42,6 +42,9 @@ function reducer(state, action) {
                     : todo
             );
 
+        // Not sure Edit button it isn't working
+        // It should find the id of the task and allow 
+        // a new task to be entered
         case TODOS_ACTIONS.EDIT_TASK:
             return state.map(todo =>
                 todo.id === action.payload
@@ -57,7 +60,7 @@ function reducer(state, action) {
 
 const Todos = () => {
     const [todos, dispatch] = useReducer(reducer, initialState);
-    const [newTask, setNewTask] = useState("");
+    const [newTask, setNewTask] = useState(""); 
     const [editText, setEditText] = useState("");
 
     return (
