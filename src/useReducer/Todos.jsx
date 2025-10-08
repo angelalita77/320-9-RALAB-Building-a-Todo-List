@@ -77,7 +77,7 @@ const Todos = () => {
             {/* Add Button: Adds the task from the input field to the list */}
             <button
                 onClick={() => {
-                    if (!newTask.trim()) return; // prevent empty tasks
+                    if (!newTask.trim()) return; // prevent empty tasks from being added
                     dispatch({
                         type: TODOS_ACTIONS.ADD_TASK,
                         payload: newTask.trim(),
