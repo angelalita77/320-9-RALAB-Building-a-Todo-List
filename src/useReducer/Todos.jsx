@@ -62,8 +62,6 @@ const Todos = () => {
 
     return (
         <>
-            {/* Header with number of To-do items to fix unique key issue */}
-            <h2>Todo List {todos.length} </h2>
 
             {/* Adding a new Task  */}
             {/* Input Field: User can type new task */}
@@ -108,6 +106,7 @@ const Todos = () => {
                         {/* Edit Button: Edit listed task */}
                         <button
                             onClick={() => {
+                                // Allow edit if edited text is not empty
                                 if (editText.trim()) {
                                     // saving type and payload in action to
                                     // monitor hooks in console.log
