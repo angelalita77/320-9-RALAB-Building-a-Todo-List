@@ -47,7 +47,7 @@ function reducer(state, action) {
         // a new task to be entered
         case TODOS_ACTIONS.EDIT_TASK:
             return state.map(todo =>
-                todo.id === action.payload
+                todo.id === action.payload.id
                     ? { ...todo, task: action.payload.newTask }
                     : todo
             );
@@ -61,6 +61,7 @@ function reducer(state, action) {
 const Todos = () => {
     const [todos, dispatch] = useReducer(reducer, initialState);
     const [newTask, setNewTask] = useState(""); 
+    const [editingId, setEditingId] = useState(null);
     const [editText, setEditText] = useState("");
 
     return (
@@ -103,7 +104,17 @@ const Todos = () => {
                                 })
                             }
                         />
+                        
+                        {editingId === todo.id ? (
+                            <>
+                             {/* If ture then show edit mode with Save button (Edit and Delete is gone) */}
+                            </>
+                        ):(
+                            // Else show listed task normally with Edit and Delete button
+                        )}
+                        
 
+                        {/* If checkbox is checked (completed = true) then put a line-through else don't */}
                         <span style={{ textDecoration: todo.completed ? "line-through" : "none" }}>  {todo.task} </span>
                         
                         {/* Edit Button: Edit listed task */}
