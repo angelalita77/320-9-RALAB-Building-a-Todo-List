@@ -108,57 +108,70 @@ const Todos = () => {
                         {editingId === todo.id ? (
                             <>
                              {/* If ture then show edit mode with Save button (Edit and Delete is gone) */}
+                             <input
+                                type="text"
+                                value={editText}
+                                onChange={(e) => setEditText(e.target.value)}
+                                autoFocus //The cursor active (focused) in text field
+                                />
+                                <button
+                                    onClick={() => {
+                                        if(!editText.trim()) return;
+                                        dispatch({
+                                            type: TODOS_ACTIONS.EDIT_TASK,
+                                            payload: {id: todo.id,
+                                                    newTask: editText.trim()
+                                                    },
+                                        });
+                                        setEditingId(null);
+                                        setEditText("")
+                                                }
+                                    }
+                                    >
+                                        Save
+                                    </button>
                             </>
                         ):(
-                            // Else show listed task normally with Edit and Delete button
+                            <>
+                                {/* Else show listed task normally with Edit and Delete button */}
+                                {/* If checkbox is checked (completed = true) then put a line-through else don't */}
+                            <span style={{ textDecoration: todo.completed ? "line-through" : "none" }}>  
+                                {todo.task} 
+                            </span>
+
+                            <button
+                                onClick = {() => {
+                                    setEditingId(todo.id);
+                                    setEditText(todo.task);
+                                }}
+                                style={{ marginLeft: "10px" }}
+                                >
+                                Edit
+                            </button>
+
+                            {/* Delete Button: Disabled when task is not completed */}
+                            <button onClick={() => {
+                                // saving type and payload in action to
+                                // monitor hooks in console.log
+                                const action = {
+                                    type: TODOS_ACTIONS.DELETE_TASK,
+                                    payload: todo.id
+                                };
+                                console.log("Action object deleted: ", action);
+                                dispatch(action);
+
+                             }}
+                                disabled={!todo.completed}
+                                style={{
+                                    marginLeft: "15px",
+                                    opacity: todo.completed ? 1 : 0.5,
+                                    cursor: todo.completed ? "pointer" : "not-allowed",
+                                }}>
+                                    Delete
+                                </button>
+                            </>
                         )}
-                        
-
-                        {/* If checkbox is checked (completed = true) then put a line-through else don't */}
-                        <span style={{ textDecoration: todo.completed ? "line-through" : "none" }}>  {todo.task} </span>
-                        
-                        {/* Edit Button: Edit listed task */}
-                        <button
-                            onClick={() => {
-                                // Allow edit if edited text is not empty
-                                if (editText.trim()) {
-                                    // saving type and payload in action to
-                                    // monitor hooks in console.log
-                                    const action = {
-                                        type: TODOS_ACTIONS.EDIT_TASK,
-                                        payload: { id: todo.id, newTask: editText.trim() }
-                                    };
-                                    console.log("Action object edited: ", action);
-                                    console.log(editText);
-                                    dispatch(action);
-                                    setEditText("");
-                                }
-                            }}
-                        >
-                            Edit
-                        </button>
-
-                        {/* Delete Button: Disabled when task is not completed */}
-                        <button onClick={() => {
-                            // saving type and payload in action to
-                            // monitor hooks in console.log
-                            const action = {
-                                type: TODOS_ACTIONS.DELETE_TASK,
-                                payload: todo.id
-                            };
-                            console.log("Action object deleted: ", action);
-                            dispatch(action);
-
-                        }}
-                            disabled={!todo.completed}
-                            style={{
-                                marginLeft: "15px",
-                                opacity: todo.completed ? 1 : 0.5,
-                                cursor: todo.completed ? "pointer" : "not-allowed",
-                            }}>
-                            Delete
-                        </button>
-
+                        {/* End of click editing listed task */}
                     </li>))}
             </ol>
 
