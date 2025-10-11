@@ -64,6 +64,16 @@ const Todos = () => {
     const [editingId, setEditingId] = useState(null);
     const [editText, setEditText] = useState("");
 
+    function handleAddTask() {
+                    if (!newTask.trim()) return; // prevent empty tasks from being added
+                    dispatch({
+                        type: TODOS_ACTIONS.ADD_TASK,
+                        payload: newTask.trim(),
+                    })
+                    setNewTask(""); // clear input
+                }
+
+
     return (
         <>
 
@@ -73,20 +83,12 @@ const Todos = () => {
             <input
                 type="text"
                 value={newTask}
-                onChange={(e) => setNewTask(e.target.value)}
+                onChange={(e) => {setNewTask(e.target.value);}}
+                
             />
-
+            
             {/* Add Button: Adds the task from the input field to the list */}
-            <button
-                onClick={() => {
-                    if (!newTask.trim()) return; // prevent empty tasks from being added
-                    dispatch({
-                        type: TODOS_ACTIONS.ADD_TASK,
-                        payload: newTask.trim(),
-                    });
-                    setNewTask(""); // clear input
-                }}
-            >
+            <button onClick={handleAddTask}>
                 Add
             </button>
 
