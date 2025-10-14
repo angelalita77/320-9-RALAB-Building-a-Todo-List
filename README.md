@@ -39,7 +39,7 @@ This table tracks the implementation status of all features outlined in the proj
 | **2.B.** | **Delete** button next to each item. | [x] | |
 | **2.B.i** | **DELETE button is DISABLED** unless the todo is complete. | [x] | Conditional rendering logic is required. |
 | **3.** | **Edit** button that replaces the todo text with an **input field**. | [x] | Requires a state variable to track the item being edited. |
-| **3.i** | **Bind the value** of the edit input to state. | [ ] | Ensures accuracy when first displayed. |
+| **3.i** | **Bind the value** of the edit input to state. | [x] | Ensures accuracy when first displayed. |
 | **3.ii** | Hide "delete" and "edit" buttons when input is active; show a **"Save"** button. | [x] | Conditional rendering based on editing state. |
 | **3.iii** | The **"Save"** button saves changes to the todo list state. | [x] | Logic to update the todo's text property. |
 | **4.** | **Input element** to create and add new todos to the list. | [x] | |
