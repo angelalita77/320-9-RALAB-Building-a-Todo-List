@@ -16,7 +16,8 @@ This is a Todo List web app. The user should be able to do the following:
 - Add new tasks by clicking on the [Add] button
 - Check off task that are completed
 - The option to delete checked off task <br>
-- ```Edit the listed task and save edit changes (WIP)```
+- Edit the listed task and save edit changes 
+- The Todo List program is in Todos.jsx and located in the "useReaducer" folder
 <br><br><br>
 
 
@@ -45,14 +46,7 @@ This table tracks the implementation status of all features outlined in the proj
 | **4.** | **Input element** to create and add new todos to the list. | [x] | |
 | **5.** | New todos are added to the **TOP** of the list (newest first). | [x] | Use spread operator to prepend the new item. |
 
-Change - [ ] to - [x] when you finish a task.
-Add up the weights of the checked items.
-Update the Progress line at the top (e.g., 35% complete).
-Update the Checked count (e.g., 5 / 14 tasks).
-Update the Progress Bar:
-Each ░ = 10% progress
-Replace with █ as you advance
-EXAMPLE: If you finish tasks worth 30% → [███░░░░░░░░░]
+
 
 
 
