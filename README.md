@@ -22,8 +22,8 @@ This is a Todo List web app. The user should be able to do the following:
 
 Project Progress Tracker
 Progress: 85% complete
-Checked: 5 / 11 tasks
-Progress Bar: [███████░░░░] 
+Checked: 11 / 11 tasks
+Progress Bar: [███████████] 
 
 Completed	Requirement	Weight
 
